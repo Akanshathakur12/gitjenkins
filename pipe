@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            agent {
+                label 'label1'
+            }
+            steps {
+                echo 'Hello World  @label1'
+            }
+        }
+        stage('world') {
+            agent {
+                label 'label2'
+            }
+            steps {
+                echo 'Hello World @label2'
+            }
+        }
+    }
+}
